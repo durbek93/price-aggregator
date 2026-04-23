@@ -1,0 +1,14 @@
+Версия релиза задаётся в version.py и в installer\PriceAggregator.iss (#define MyAppVersion); список изменений — CHANGELOG.md.
+
+1) Один файл PriceAggregator.exe (без .bat)
+   - В корне проекта:
+     pip install -r requirements.txt pyinstaller
+     pyinstaller price_aggregator.spec
+   - Запуск: dist\PriceAggregator.exe (двойной щелчок). Консольное окно не показывается.
+
+2) Установщик setup.exe (Inno Setup)
+   - Установите Inno Setup 6: https://jrsoftware.org/isdl.php
+   - Соберите exe шагом выше.
+   - Откройте installer\PriceAggregator.iss в Inno Setup → Compile.
+   - Готовый установщик: installer_output\PriceAggregatorSetup.exe
+   - Раздайте коллегам именно PriceAggregatorSetup.exe (или сам exe из dist, если установщик не нужен).
